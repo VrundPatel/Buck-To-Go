@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularFire2';
 
 import { NavController } from 'ionic-angular';
 
@@ -7,9 +8,6 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, af: AngularFire) {
   }
-
 }
