@@ -5,9 +5,14 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [AngularFire]
 })
 export class HomePage {
-  constructor(public navCtrl: NavController, af: AngularFire) {
+
+    menu: FirebaseListObservable<any[]>;
+
+    constructor(public navCtrl: NavController, af: AngularFire) {
+        this.menu = af.database.list('/menu');
   }
 }
