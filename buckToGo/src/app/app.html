@@ -1,1 +1,4 @@
-<ion-nav [root]="rootPage"></ion-nav>
+
+<ul>
+    <li *ngFor="let item of getMenu() | async"> {{ item['category'] }}</li>
+</ul>

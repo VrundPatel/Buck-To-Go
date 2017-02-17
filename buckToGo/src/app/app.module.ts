@@ -1,17 +1,9 @@
 import { NgModule, ErrorHandler } from '@angular/core';
-//import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-
-
 import { BrowserModule } from '@angular/platform-browser';
-//import { AppComponent } from './app.component';
-import { AngularFireModule } from 'angularfire2';
-
-
-
-
 
 // Firebase config
 export const firebaseConfig = {
@@ -24,16 +16,13 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-
-  //  AppComponent//herer
+    HomePage
 
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    BrowserModule,//herjer
-    AngularFireModule.initializeApp(firebaseConfig)//herh
-  //  AngularFireModule.initializeApp(firebaseConfig)
+    BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

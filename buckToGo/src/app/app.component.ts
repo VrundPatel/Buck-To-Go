@@ -1,25 +1,21 @@
 import { Component } from '@angular/core';
-//import { AngularFire } from 'angularFire2';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { HomePage } from '../pages/home/home';
 
-//import { authDomain } from 'angularfire2'
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
-  templateUrl: 'app.html',
-
   selector: 'app-root',//herj
-  //templateUrl: 'app.component.html',//herklhj
-  //styleUrls: ['app.component.css']//herh
-
+  templateUrl: 'app.component.html'//herklhj
+  // styleUrls: ['app.component.css']//herh
 
 })
 export class MyApp {
   rootPage = HomePage;
 
   items: FirebaseListObservable<any[]>;
+  private menu: Object[];
 
   constructor(platform: Platform, af: AngularFire) {
     platform.ready().then(() => {
@@ -28,7 +24,16 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
 
-      this.items = af.database.list('/items');//herh
+      this.items = af.database.list('/menu');
+      this.items.subscribe(items => {
+          items.forEach(item => {
+              console.log('Item:', item);
+          });
+        });
     });
+  }
+
+  public getMenu(): Object[] {
+      return this.menu;
   }
 }
