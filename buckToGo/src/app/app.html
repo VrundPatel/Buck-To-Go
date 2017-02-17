@@ -1,4 +1,3 @@
-
-<ul>
-    <li *ngFor="let item of getMenu() | async"> {{ item['category'] }}</li>
-</ul>
+<ion-item *ngFor="let item of items | async">
+  {{ item['category'] }}
+</ion-item>

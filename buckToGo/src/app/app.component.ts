@@ -6,16 +6,16 @@ import { HomePage } from '../pages/home/home';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
-  selector: 'app-root',//herj
-  templateUrl: 'app.component.html'//herklhj
+  selector: 'ion-app',//herj
+  templateUrl: 'app.html'
   // styleUrls: ['app.component.css']//herh
 
 })
 export class MyApp {
   rootPage = HomePage;
 
-  items: FirebaseListObservable<any[]>;
-  private menu: Object[];
+  items: FirebaseListObservable<any>;
+  menu: Object[];
 
   constructor(platform: Platform, af: AngularFire) {
     platform.ready().then(() => {
@@ -25,15 +25,15 @@ export class MyApp {
       Splashscreen.hide();
 
       this.items = af.database.list('/menu');
-      this.items.subscribe(items => {
-          items.forEach(item => {
-              console.log('Item:', item);
-          });
-        });
+      this.items.forEach(x => {
+          console.log(x);
+      });
+    //   this.items.subscribe(list => {
+    //       list.forEach(item => {
+    //           console.log('Item:', item);
+    //       });
+    //     });
     });
   }
 
-  public getMenu(): Object[] {
-      return this.menu;
-  }
 }
