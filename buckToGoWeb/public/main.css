@@ -1,4 +1,4 @@
 .mdl-layout-title {
-    font-family: 'Fugaz One', cursive;
-    font-size: 30px;
+    font-family: 'Fugaz One', cursive !important;
+    font-size: 30px !important;
 }
