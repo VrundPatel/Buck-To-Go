@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SubMenuPage } from '../pages/sub-menu-page/sub-menu-page';
 
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
@@ -17,7 +18,8 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SubMenuPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -26,7 +28,8 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SubMenuPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler}

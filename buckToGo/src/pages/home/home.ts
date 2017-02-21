@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
-import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
+
+import { SubMenuPage } from '../sub-menu-page/sub-menu-page';
 
 @Component({
   selector: 'page-home',
@@ -13,5 +15,9 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, af: AngularFire) {
       this.menu = af.database.list('/menu');
+  }
+
+  showSubMenu(item) {
+      this.navCtrl.push(SubMenuPage, { item: item });
   }
 }

@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content class="card-background-page" padding>
-  <ion-card *ngFor="let item of menu | async" (click)="showSubMenu()">
+  <ion-card *ngFor="let item of menu | async" (click)="showSubMenu(item)">
     <img src="assets/images/burgers.jpg"/>
     <div class="card-title">{{item['category']}}</div>
   </ion-card>
