@@ -1,12 +1,13 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>subMenuPage</ion-title>
+    <ion-title>{{item['category']}}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-Hello, world!
+<ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let food of item['items']">
+        {{ food['name'] }}
+      </button>
+    </ion-list>
 </ion-content>
