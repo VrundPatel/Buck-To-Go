@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SubMenuPage } from '../pages/sub-menu-page/sub-menu-page';
+import { OrderSummaryPage } from '../pages/order-summary/order-summary';
 
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
@@ -19,7 +20,8 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     HomePage,
-    SubMenuPage
+    SubMenuPage,
+    OrderSummaryPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -29,7 +31,8 @@ export const firebaseConfig = {
   entryComponents: [
     MyApp,
     HomePage,
-    SubMenuPage
+    SubMenuPage,
+    OrderSummaryPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler}
