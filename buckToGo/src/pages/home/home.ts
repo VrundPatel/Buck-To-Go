@@ -5,6 +5,8 @@ import { NavController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 import { SubMenuPage } from '../sub-menu-page/sub-menu-page';
+import { OrderSummaryPage } from '../order-summary/order-summary';
+
 
 @Component({
   selector: 'page-home',
@@ -19,5 +21,9 @@ export class HomePage {
 
   showSubMenu(item) {
       this.navCtrl.push(SubMenuPage, { item: item });
+  }
+
+  showOrderPage() {
+      this.navCtrl.push(OrderSummaryPage);
   }
 }

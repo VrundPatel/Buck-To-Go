@@ -1,10 +1,16 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar>
+    <ion-buttons start>
+    </ion-buttons>
     <ion-title>buckToGo</ion-title>
-  </ion-navbar>
+    <ion-buttons end>
+      <button ion-button (click)="showOrderPage()">
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
-
-<ion-content class="card-background-page" padding>
+<ion-content class="card-background-page">
   <ion-card *ngFor="let item of menu | async" (click)="showSubMenu(item)">
     <img src="assets/images/burgers.jpg"/>
     <div class="card-title">{{item['category']}}</div>
