@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularFire2';
 
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
+
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html',
- providers: [AngularFire]
+  templateUrl: 'home.html'
 })
 export class HomePage {
+  menu: FirebaseListObservable<any>;
 
-    menu: FirebaseListObservable<any[]>;
-
-    constructor(public navCtrl: NavController, af: AngularFire) {
-        this.menu = af.database.list('/menu');
+  constructor(public navCtrl: NavController, af: AngularFire) {
+      this.menu = af.database.list('/menu');
   }
 }

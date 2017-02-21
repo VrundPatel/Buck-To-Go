@@ -5,21 +5,8 @@
 </ion-header>
 
 <ion-content class="card-background-page" padding>
-  <ion-card>
+  <ion-card *ngFor="let item of menu | async" (click)="showSubMenu()">
     <img src="assets/images/burgers.jpg"/>
-    <div class="card-title">Burgers</div>
-  </ion-card>
-  <ion-card>
-    <img src="assets/images/soda.jpg"/>
-    <div class="card-title">Sodas</div>
-  </ion-card>
-  <ion-card>
-    <img src="assets/images/burgers.jpg"/>
-    <div class="card-title">Burgers</div>
+    <div class="card-title">{{item['category']}}</div>
   </ion-card>
 </ion-content>
-
-<!-- <ion-item *ngFor="let item of menu | async"> -->
-<!-- <ul>
-    <li *ngFor="let item of menu"></li>
-</ul> -->
