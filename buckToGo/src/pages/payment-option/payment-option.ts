@@ -8,8 +8,7 @@ import { NavController, NavParams, Platform, ViewController } from 'ionic-angula
 export class PaymentOptionPage {
 
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
+
     public viewCtrl: ViewController
   ) {}
 
@@ -18,7 +17,7 @@ export class PaymentOptionPage {
   }
 
   orderFood(){
-    alert("Hallo");
+
     this.dismiss();
   }
 

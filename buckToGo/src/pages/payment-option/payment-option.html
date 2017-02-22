@@ -1,10 +1,16 @@
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Payment Option</ion-title>
-  </ion-navbar>
-
+<ion-toolbar>
+    <ion-title>
+      Payment Option
+    </ion-title>
+<ion-buttons start>
+  <button ion-button (click) = "dismiss()">
+    <span ion-text color = "primary" showWhen="ios">Cancel</span>
+  </button>
+</ion-buttons>
+</ion-toolbar>
 </ion-header>
+
 
 
 <ion-content padding>
@@ -27,6 +33,6 @@
     </ion-item>
   </ion-list>
 
-<button ion-button block (click) = "orderFood()">Submit</button>
+<button ion-button block (click) = "orderFood()">Enter</button>
 
 </ion-content>
