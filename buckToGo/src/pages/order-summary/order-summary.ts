@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { ModalController, Platform, ViewController, NavParams } from 'ionic-angular';
+import { StudentInfoPage } from '../student-info/student-info';
 
 @Component({
   selector: 'page-order-summary',
@@ -7,10 +8,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class OrderSummaryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  //item;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad OrderSummaryPage');
+  constructor(public modalCtrl: ModalController, public navParams: NavParams) {
+    //this.item = this.navParams.data.item;
+  }
+
+  studInfo() {
+    let modal = this.modalCtrl.create(StudentInfoPage);
+    modal.present();
   }
 
 }
