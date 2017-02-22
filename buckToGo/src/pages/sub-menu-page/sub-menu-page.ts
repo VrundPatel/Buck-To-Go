@@ -7,7 +7,6 @@ import { ItemOrderPage } from '../item-order/item-order';
   templateUrl: 'sub-menu-page.html'
 })
 export class SubMenuPage {
-
   item;
 
   constructor(public modalCtrl: ModalController, public navParams: NavParams) {
@@ -19,4 +18,5 @@ export class SubMenuPage {
     modal.present();
   }
 
+  ionViewDidLoad() { }
 }
