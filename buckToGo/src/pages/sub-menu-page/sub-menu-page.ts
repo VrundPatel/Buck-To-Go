@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { ModalController, Platform, ViewController, NavParams } from 'ionic-angular';
+import { ItemOrderPage } from '../item-order/item-order';
 
 @Component({
   selector: 'page-sub-menu-page',
@@ -9,13 +10,13 @@ export class SubMenuPage {
 
   item;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-      this.item = navParams.data.item;
-      console.log(this.item);
+  constructor(public modalCtrl: ModalController, public navParams: NavParams) {
+    this.item = this.navParams.data.item;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SubMenuPagePage');
+  orderItem(food){
+    let modal = this.modalCtrl.create(ItemOrderPage, {food: food});
+    modal.present();
   }
 
 }

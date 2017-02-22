@@ -1,22 +1,21 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { ModalController, Platform, ViewController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the ItemOrder page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-item-order',
   templateUrl: 'item-order.html'
 })
 export class ItemOrderPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ItemOrderPage');
+food;
+  constructor(
+    public platform: Platform,
+    public navParams: NavParams,
+    public viewCtrl: ViewController
+  ) {
+    this.food = this.navParams.data.food;
   }
 
+  dismiss(){
+    this.viewCtrl.dismiss();
+  }
 }
