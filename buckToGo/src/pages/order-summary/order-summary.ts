@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController, Platform, ViewController, NavParams } from 'ionic-angular';
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { StudentInfoPage } from '../student-info/student-info';
 
 @Component({
@@ -8,10 +9,14 @@ import { StudentInfoPage } from '../student-info/student-info';
 })
 export class OrderSummaryPage {
 
-  //item;
+  itemsOrdered: FirebaseListObservable<any>;
 
-  constructor(public modalCtrl: ModalController, public navParams: NavParams) {
-    //this.item = this.navParams.data.item;
+  constructor(
+      public modalCtrl: ModalController,
+      public navParams: NavParams,
+      public af: AngularFire
+  ) {
+      this.itemsOrdered = af.database.list('/queue/0/items');
   }
 
   studInfo() {
