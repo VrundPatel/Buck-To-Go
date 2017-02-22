@@ -6,8 +6,9 @@
 
 <ion-content>
     <ion-list>
-      <button ion-item *ngFor="let food of item['items']" (click) = "orderItem(food)">
-        {{ food['name'] }}
-      </button>
+      <ion-item *ngFor="let food of item['items']" (click)="orderItem(food)">
+        {{food['name']}}
+        <h2 item-right>${{food['price']}}</h2>
+      </ion-item>
     </ion-list>
 </ion-content>
