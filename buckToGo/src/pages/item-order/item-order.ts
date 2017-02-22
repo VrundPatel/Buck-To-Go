@@ -18,4 +18,10 @@ food;
   dismiss(){
     this.viewCtrl.dismiss();
   }
+
+  addToOrder(food){
+    alert(food);
+    this.dismiss();
+  }
+
 }
