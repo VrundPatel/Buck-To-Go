@@ -1,0 +1,36 @@
+  <ion-header>
+  <ion-toolbar>
+      <ion-title>
+        Student Info
+      </ion-title>
+  <ion-buttons start>
+    <button ion-button (click) = "dismiss()">
+      <span ion-text color = "primary" showWhen="ios">Cancel</span>
+    </button>
+  </ion-buttons>
+  </ion-toolbar>
+  </ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>First Name</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Last Name</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Contact Phone Number</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Student ID Number</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+  <button ion-button block (click) = "requirmentInfo()">Submit</button>
+</ion-content>
