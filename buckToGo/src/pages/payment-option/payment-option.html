@@ -9,4 +9,24 @@
 
 <ion-content padding>
 
+  <ion-list radio-group>
+
+    <ion-item>
+      <ion-label>Cash</ion-label>
+      <ion-radio value="cash"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Points</ion-label>
+      <ion-radio value="points"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Credit Card</ion-label>
+      <ion-radio value="CreditCard"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+<button ion-button block (click) = "orderFood()">Submit</button>
+
 </ion-content>
