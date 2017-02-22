@@ -27,10 +27,19 @@
       <ion-radio value="points"></ion-radio>
     </ion-item>
 
-    <ion-item>
-      <ion-label>Credit Card</ion-label>
-      <ion-radio value="CreditCard"></ion-radio>
-    </ion-item>
+
+  <ion-item>
+    <ion-label>Credit Card</ion-label>
+    <ion-select [(ngModel)]="gaming">
+      <ion-option value="Visa">Visa</ion-option>
+      <ion-option value="MasterCard">MasterCard</ion-option>
+      <ion-option value="American Express">American Express</ion-option>
+      <ion-option value="Discover">Discover</ion-option>
+      <ion-option value="Citibank">Citibank</ion-option>
+      <ion-option value="Capital One">Capital One</ion-option>
+    </ion-select>
+  </ion-item>
+
   </ion-list>
 
 <button ion-button block (click) = "orderFood()">Enter</button>
