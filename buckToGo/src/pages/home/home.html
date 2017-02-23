@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons start>
+      <button ion-button (click)="showQueue(queue)">
+        <ion-icon name="restaurant"></ion-icon>
+      </button>
     </ion-buttons>
     <ion-title>buckToGo</ion-title>
     <ion-buttons end>
@@ -12,7 +15,7 @@
 </ion-header>
 <ion-content class="card-background-page">
   <ion-card *ngFor="let item of menu | async" (click)="showSubMenu(item)">
-    <img src="assets/images/burgers.jpg"/>
+    <img src="assets/images/1.jpg"/>
     <div class="card-title">{{item['category']}}</div>
   </ion-card>
 </ion-content>

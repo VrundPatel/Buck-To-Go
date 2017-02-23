@@ -7,6 +7,7 @@ import { OrderSummaryPage } from '../pages/order-summary/order-summary';
 import { ItemOrderPage } from '../pages/item-order/item-order';
 import { StudentInfoPage } from '../pages/student-info/student-info';
 import { PaymentOptionPage } from '../pages/payment-option/payment-option';
+import { QueuePage } from '../pages/queue/queue';
 
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
@@ -27,7 +28,8 @@ export const firebaseConfig = {
     OrderSummaryPage,
     ItemOrderPage,
     StudentInfoPage,
-    PaymentOptionPage
+    PaymentOptionPage,
+    QueuePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -41,7 +43,8 @@ export const firebaseConfig = {
     OrderSummaryPage,
     ItemOrderPage,
     StudentInfoPage,
-    PaymentOptionPage
+    PaymentOptionPage,
+    QueuePage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler}
