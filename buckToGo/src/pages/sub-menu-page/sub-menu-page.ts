@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, Platform, ViewController, NavParams } from 'ionic-angular';
+import { ModalController, NavParams } from 'ionic-angular';
 import { ItemOrderPage } from '../item-order/item-order';
 
 @Component({

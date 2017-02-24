@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, Platform, ViewController, NavParams } from 'ionic-angular';
+import { ModalController, NavParams } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { StudentInfoPage } from '../student-info/student-info';
 import { PaymentOptionPage } from '../payment-option/payment-option';

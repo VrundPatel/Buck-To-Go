@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, Platform, ViewController, NavParams } from 'ionic-angular';
+import { Platform, ViewController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-item-order',
