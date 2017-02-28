@@ -1,22 +1,18 @@
 <ion-header>
-<ion-toolbar>
+  <ion-toolbar>
     <ion-title>
       Payment Option
     </ion-title>
-<ion-buttons start>
-  <button ion-button (click) = "dismiss()">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
     <span ion-text color = "primary" showWhen="ios">Cancel</span>
   </button>
-</ion-buttons>
-</ion-toolbar>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-
-
 <ion-content padding>
-
   <ion-list radio-group>
-
     <ion-item>
       <ion-label>Cash</ion-label>
       <ion-radio value="cash"></ion-radio>
@@ -26,7 +22,6 @@
       <ion-label>Points</ion-label>
       <ion-radio value="points"></ion-radio>
     </ion-item>
-
 
   <ion-item>
     <ion-label>Credit Card</ion-label>
@@ -39,9 +34,8 @@
       <ion-option value="Capital One">Capital One</ion-option>
     </ion-select>
   </ion-item>
-
-  </ion-list>
-
-<button ion-button block (click) = "orderFood()">Enter</button>
+  
+  <br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <button ion-button block (click)="orderFood()">Enter</button>
 
 </ion-content>

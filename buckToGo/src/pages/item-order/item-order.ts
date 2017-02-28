@@ -25,7 +25,7 @@ export class ItemOrderPage {
   }
 
   addToOrder(food){
-    alert(food);
+    // alert(food);
     this.dismiss();
   }
 
