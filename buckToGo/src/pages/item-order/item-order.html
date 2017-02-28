@@ -12,7 +12,25 @@
 </ion-toolbar>
 </ion-header>
 
-
 <ion-content padding>
+
+
+
+  <ion-list>
+    <ion-item>
+      Price
+      <h2 item-right>${{food['price']}}</h2>
+    </ion-item>
+    <ion-item>
+      <ion-label>Quantity</ion-label>
+      <ion-select [(ngModel)]="quantity">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
   <button ion-button block (click) = "addToOrder(food)">Add to your order</button>
 </ion-content>
