@@ -13,9 +13,6 @@
 </ion-header>
 
 <ion-content padding>
-
-
-
   <ion-list>
     <ion-item>
       Price
@@ -23,12 +20,16 @@
     </ion-item>
     <ion-item>
       <ion-label>Quantity</ion-label>
-      <ion-select [(ngModel)]="quantity">
+      <ion-select [(ngModel)]="quantity" (ngModelChange)="calculateSubTotal()">
         <ion-option value="1">1</ion-option>
         <ion-option value="2">2</ion-option>
         <ion-option value="3">3</ion-option>
         <ion-option value="4">4</ion-option>
       </ion-select>
+    </ion-item>
+    <ion-item>
+        Subtotal
+        <h2 item-right>${{subtotal}}</h2>
     </ion-item>
   </ion-list>
 
