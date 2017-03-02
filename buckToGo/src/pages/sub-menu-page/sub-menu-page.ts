@@ -8,13 +8,20 @@ import { ItemOrderPage } from '../item-order/item-order';
 })
 export class SubMenuPage {
   item;
+  currentOrder;
 
   constructor(public modalCtrl: ModalController, public navParams: NavParams) {
     this.item = this.navParams.data.item;
+    this.currentOrder = this.navParams.data.currentOrder;
+    console.log('Current order:');
+    console.log(this.currentOrder);
   }
 
-  orderItem(food){
-    let modal = this.modalCtrl.create(ItemOrderPage, {food: food});
+  orderItem(food, currentOrder){
+    let modal = this.modalCtrl.create(ItemOrderPage, {
+        food: food,
+        currentOrder: this.currentOrder
+    });
     modal.present();
   }
 

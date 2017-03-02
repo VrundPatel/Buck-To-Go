@@ -10,7 +10,7 @@ export class QueuePage {
 
   queue;
 
-  constructor( public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
       this.queue = this.navParams.data.queue;
       console.log(this.queue);
   }

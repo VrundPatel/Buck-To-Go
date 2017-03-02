@@ -7,6 +7,7 @@ import { Platform, ViewController, NavParams } from 'ionic-angular';
 })
 export class ItemOrderPage {
     food;
+    currentOrder;
     public quantity: number;
     public subtotal: number;
 
@@ -16,6 +17,7 @@ export class ItemOrderPage {
     public viewCtrl: ViewController
   ) {
     this.food = this.navParams.data.food;
+    this.currentOrder = this.navParams.data.currentOrder;
     this.quantity = 1;
     this.calculateSubTotal();
   }
@@ -25,7 +27,10 @@ export class ItemOrderPage {
   }
 
   addToOrder(food){
-    // alert(food);
+    // Add the food item to the queue for this order.
+    this.currentOrder.items.push(food);
+    console.log('Current orderered food');
+    console.log(this.currentOrder);
     this.dismiss();
   }
 
