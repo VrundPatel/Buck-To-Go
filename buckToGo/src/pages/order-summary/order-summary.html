@@ -11,6 +11,10 @@
       <h2>{{order['name']}}</h2>
       <ion-badge item-right>{{order['quantity']}}</ion-badge>
     </ion-item>
+    <ion-item>
+        Total:
+        <h2 item-right>${{total}}</h2>
+    </ion-item>
   </ion-list>
   <button ion-button block (click)="studInfo()">Student Info</button>
   <button ion-button block (click)="payPayment()">Submit Order</button>

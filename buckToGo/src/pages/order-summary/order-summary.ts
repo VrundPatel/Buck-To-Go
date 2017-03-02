@@ -11,6 +11,7 @@ import { PaymentOptionPage } from '../payment-option/payment-option';
 export class OrderSummaryPage {
 
   itemsOrdered: FirebaseListObservable<any>;
+  public total: number;
 
   constructor(
       public modalCtrl: ModalController,
@@ -18,6 +19,7 @@ export class OrderSummaryPage {
       public af: AngularFire
   ) {
       this.itemsOrdered = af.database.list('/queue/0/items');
+      this.calculateTotal();
   }
 
   payPayment(){
@@ -28,6 +30,16 @@ export class OrderSummaryPage {
   studInfo() {
     let modal = this.modalCtrl.create(StudentInfoPage);
     modal.present();
+  }
+
+  calculateTotal() {
+      this.itemsOrdered.subscribe((order) => {
+          order.forEach((foodItem) => {
+              this.total += foodItem['quantity'] * foodItem['price'];
+              console.log(foodItem);
+              console.log('hello');
+          });
+    });
   }
 
 }
