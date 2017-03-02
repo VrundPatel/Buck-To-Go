@@ -51,7 +51,9 @@ export class HomePage {
       currentOrder: this.currentOrder
   }); }
 
-  showOrderPage() { this.navCtrl.push(OrderSummaryPage); }
+  showOrderPage() { this.navCtrl.push(OrderSummaryPage, {
+      currentOrder: this.currentOrder
+  }); }
 
   showQueue(queue) { this.navCtrl.push(QueuePage, {
       queue: queue,

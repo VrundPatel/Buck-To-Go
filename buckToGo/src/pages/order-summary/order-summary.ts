@@ -9,8 +9,7 @@ import { PaymentOptionPage } from '../payment-option/payment-option';
   templateUrl: 'order-summary.html'
 })
 export class OrderSummaryPage {
-
-  itemsOrdered: FirebaseListObservable<any>;
+  currentOrder;
   public total: number;
 
   constructor(
@@ -18,7 +17,7 @@ export class OrderSummaryPage {
       public navParams: NavParams,
       public af: AngularFire
   ) {
-      this.itemsOrdered = af.database.list('/queue/0/items');
+      this.currentOrder = this.navParams.data.currentOrder;
       this.calculateTotal();
   }
 
@@ -33,13 +32,9 @@ export class OrderSummaryPage {
   }
 
   calculateTotal() {
-      this.itemsOrdered.subscribe((order) => {
-          order.forEach((foodItem) => {
-              this.total += foodItem['quantity'] * foodItem['price'];
-              console.log(foodItem);
-              console.log('hello');
-          });
-    });
+      for (var food of this.currentOrder.items) {
+          this.total += food.quantity * food.price;
+      }
   }
 
 }

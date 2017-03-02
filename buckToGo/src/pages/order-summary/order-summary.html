@@ -7,7 +7,7 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let order of itemsOrdered | async">
+    <ion-item *ngFor="let order of currentOrder.items">
       <h2>{{order['name']}}</h2>
       <ion-badge item-right>{{order['quantity']}}</ion-badge>
     </ion-item>

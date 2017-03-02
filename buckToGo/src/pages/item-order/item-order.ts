@@ -29,8 +29,6 @@ export class ItemOrderPage {
   addToOrder(food){
     // Add the food item to the queue for this order.
     this.currentOrder.items.push(food);
-    console.log('Current orderered food');
-    console.log(this.currentOrder);
     this.dismiss();
   }
 
