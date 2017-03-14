@@ -9,7 +9,7 @@
   <ion-list>
     <ion-item *ngFor="let order of currentOrder.items">
       <h2>{{order['name']}}</h2>
-      <ion-badge item-right>{{order['quantity']}}</ion-badge>
+      <h2 item-right>${{order['price']}} x <strong>{{order['quantity']}}</strong></h2>
     </ion-item>
     <ion-item>
         Total:

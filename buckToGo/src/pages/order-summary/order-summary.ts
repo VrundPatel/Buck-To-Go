@@ -32,6 +32,7 @@ export class OrderSummaryPage {
   }
 
   calculateTotal() {
+      this.total = 0;
       for (var food of this.currentOrder.items) {
           this.total += food.quantity * food.price;
       }

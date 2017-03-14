@@ -28,12 +28,14 @@ export class ItemOrderPage {
 
   addToOrder(food){
     // Add the food item to the queue for this order.
+    this.food.quantity = +this.quantity;
     this.currentOrder.items.push(food);
+    console.log(food);
     this.dismiss();
   }
 
   public calculateSubTotal() {
-      this.subtotal = this.quantity * this.food['price'];
+      this.subtotal = this.quantity * this.food.price;
   }
 
 }
