@@ -11,6 +11,7 @@ import { PaymentOptionPage } from '../payment-option/payment-option';
 export class OrderSummaryPage {
   currentOrder;
   public total: number;
+  public waitTime: number;
 
   constructor(
       public modalCtrl: ModalController,
@@ -19,6 +20,7 @@ export class OrderSummaryPage {
   ) {
       this.currentOrder = this.navParams.data.currentOrder;
       this.calculateTotal();
+      this.waitTime = Math.ceil((Math.random() * (5) + 3));
   }
 
   payPayment(){

@@ -5,19 +5,25 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let order of currentOrder.items">
-      <h2>{{order['name']}}</h2>
-      <h2 item-right>${{order['price']}} x <strong>{{order['quantity']}}</strong></h2>
-    </ion-item>
-    <ion-item>
-        Total:
-        <h2 item-right>${{total}}</h2>
-    </ion-item>
-  </ion-list>
-  <h4>Comments:</h4>
-  <textarea name="name" rows="3" cols="40"></textarea>
-  <button ion-button block (click)="studInfo()">Student Info</button>
-  <button ion-button block (click)="payPayment()">Submit Order</button>
+<ion-content padding >
+    <div *ngIf="currentOrder.items.length > 0">
+      <ion-list>
+        <ion-item *ngFor="let order of currentOrder.items">
+          <h2>{{order['name']}}</h2>
+          <h2 item-right>${{order['price']}} x <strong>{{order['quantity']}}</strong></h2>
+        </ion-item>
+        <ion-item>
+            <strong>Total:</strong>
+            <h2 item-right>${{total}}</h2>
+        </ion-item>
+        <ion-item>
+            <strong>Average Wait Time:</strong>
+            <h2 item-right>{{waitTime}} minutes</h2>
+        </ion-item>
+      </ion-list>
+      <h4>Comments:</h4>
+      <textarea name="name" rows="3" cols="40"></textarea>
+      <button ion-button block (click)="studInfo()">Student Info</button>
+      <button ion-button block (click)="payPayment()">Submit Order</button>
+  </div>
 </ion-content>
