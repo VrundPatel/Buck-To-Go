@@ -12,18 +12,21 @@
           <h2>{{order['name']}}</h2>
           <h2 item-right>${{order['price']}} x <strong>{{order['quantity']}}</strong></h2>
         </ion-item>
-        <ion-item>
-            <strong>Total:</strong>
-            <h2 item-right>${{total}}</h2>
-        </ion-item>
-        <ion-item>
-            <strong>Average Wait Time:</strong>
-            <h2 item-right>{{waitTime}} minutes</h2>
-        </ion-item>
       </ion-list>
-      <h4>Comments:</h4>
-      <textarea name="name" rows="3" cols="40"></textarea>
-      <button ion-button block (click)="studInfo()">Student Info</button>
-      <button ion-button block (click)="payPayment()">Submit Order</button>
-  </div>
+      <ion-grid>
+          <ion-row>
+              <ion-col class="col-4"><h4><strong>Total:</strong></h4></ion-col>
+              <ion-col class="col-4"></ion-col>
+              <ion-col class="col-4">${{total}}</ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col class="col-8"><h4><strong>Average Wait Time:</strong></h4></ion-col>
+              <ion-col class="col-4">{{waitTime}} minutes</ion-col>
+          </ion-row>
+          <h4>Comments:</h4>
+          <textarea name="name" rows="3" cols="40"></textarea>
+          <button ion-button block (click)="studInfo()">Student Info</button>
+          <button ion-button block (click)="payPayment()">Submit Order</button>
+      </ion-grid>
+    </div>
 </ion-content>
