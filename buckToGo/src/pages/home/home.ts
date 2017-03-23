@@ -4,12 +4,9 @@ import { NavController } from 'ionic-angular';
 
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
-import { Order } from '../../app/order.model';
-
 import { SubMenuPage } from '../sub-menu-page/sub-menu-page';
 import { OrderSummaryPage } from '../order-summary/order-summary';
 import { QueuePage } from '../queue/queue';
-import { CurrentOrder } from '../../models/currentOrder.model';
 import * as firebase from 'firebase';
 
 
@@ -20,14 +17,20 @@ import * as firebase from 'firebase';
 export class HomePage {
   menu: FirebaseListObservable<any>;
   queue: FirebaseListObservable<any>;
-  currentOrder: CurrentOrder;
+  currentOrder: Object;
   // imageSrc: string[];
 
   constructor(public navCtrl: NavController, af: AngularFire) {
       // Accessing the data from Firebase
       this.menu = af.database.list('/menu');
       this.queue= af.database.list('/queue');
-      this.currentOrder = new CurrentOrder();
+      this.currentOrder = {
+        "foodItems": [],
+        "customer": {},
+        "payment": {},
+        "comments": ""
+      };
+      console.log(this.currentOrder);
 
       // Storage reference
     //   for (let i = 0; i < 4; i++) {
@@ -42,17 +45,22 @@ export class HomePage {
 
   }
 
+  // Navigating to the sub menu page
+  // PARAMS:
+  //    item => the category clicked on
+  //    currentOrder +> the currentOrder object
   showSubMenu(item) { this.navCtrl.push(SubMenuPage, {
       item: item,
       currentOrder: this.currentOrder
   }); }
 
+  // Navigating to the sub menu page
+  // PARAMS:
+  //    queue => the current queue from the backend
+  //    currentOrder => the currentOrder object
   showOrderPage() { this.navCtrl.push(OrderSummaryPage, {
+      queue: this.queue,
       currentOrder: this.currentOrder
   }); }
 
-  showQueue(queue) { this.navCtrl.push(QueuePage, {
-      queue: queue,
-      currentOrder: this.currentOrder
-  }); }
 }

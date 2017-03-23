@@ -29,8 +29,9 @@ export class ItemOrderPage {
   addToOrder(food){
     // Add the food item to the queue for this order.
     this.food.quantity = +this.quantity;
-    this.currentOrder.items.push(food);
+    this.currentOrder.foodItems.push(food);
     console.log(food);
+    console.log(this.currentOrder);
     this.dismiss();
   }
 

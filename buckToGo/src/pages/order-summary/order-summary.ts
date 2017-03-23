@@ -10,6 +10,7 @@ import { PaymentOptionPage } from '../payment-option/payment-option';
 })
 export class OrderSummaryPage {
   currentOrder;
+  queue;
   public total: number;
   public waitTime: number;
 
@@ -18,26 +19,37 @@ export class OrderSummaryPage {
       public navParams: NavParams,
       public af: AngularFire
   ) {
+      // Initializes the current order and the queue passed in from the home page.
       this.currentOrder = this.navParams.data.currentOrder;
+      this.queue = this.navParams.data.queue;
+      console.log('Current Order' , this.currentOrder);
       this.calculateTotal();
       this.waitTime = Math.ceil((Math.random() * (5) + 3));
   }
 
+  // Opens the modal to enter the payment info.
   payPayment(){
     let modal = this.modalCtrl.create(PaymentOptionPage);
     modal.present();
   }
 
+  // Opens the modal to enter the student info.
   studInfo() {
     let modal = this.modalCtrl.create(StudentInfoPage);
     modal.present();
   }
 
+  // Calculates the total of the order.
   calculateTotal() {
       this.total = 0;
-      for (var food of this.currentOrder.items) {
+      for (let food of this.currentOrder.foodItems) {
           this.total += food.quantity * food.price;
       }
+  }
+
+  // Ordering the food, adding the order to the database.
+  orderFood() {
+      this.queue.push(this.currentOrder);
   }
 
 }

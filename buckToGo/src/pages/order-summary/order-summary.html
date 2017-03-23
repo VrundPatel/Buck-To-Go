@@ -6,9 +6,9 @@
 
 
 <ion-content padding >
-    <div *ngIf="currentOrder.items.length > 0">
+    <div *ngIf="currentOrder.foodItems.length > 0">
       <ion-list>
-        <ion-item *ngFor="let order of currentOrder.items">
+        <ion-item *ngFor="let order of currentOrder.foodItems">
           <h2>{{order['name']}}</h2>
           <h2 item-right>${{order['price']}} x <strong>{{order['quantity']}}</strong></h2>
         </ion-item>
@@ -26,7 +26,8 @@
           <h4>Comments:</h4>
           <textarea name="name" rows="3" cols="40"></textarea>
           <button ion-button block (click)="studInfo()">Student Info</button>
-          <button ion-button block (click)="payPayment()">Submit Order</button>
+          <button ion-button block (click)="payPayment()">Payment Info</button>
+          <button ion-button block (click)="orderFood()">Submit Order</button>
       </ion-grid>
     </div>
 </ion-content>
