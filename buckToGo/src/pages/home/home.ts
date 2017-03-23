@@ -18,7 +18,7 @@ export class HomePage {
   menu: FirebaseListObservable<any>;
   queue: FirebaseListObservable<any>;
   currentOrder: Object;
-  // imageSrc: string[];
+  imageSrc: string[];
 
   constructor(public navCtrl: NavController, af: AngularFire) {
       // Accessing the data from Firebase
@@ -32,16 +32,14 @@ export class HomePage {
       };
       console.log(this.currentOrder);
 
-      // Storage reference
-    //   for (let i = 0; i < 4; i++) {
-    //       let image: string;
-    //       let str = String(i) + '.jpeg';
-    //       const storageRef = firebase.storage().refFromURL('gs://buck-to-go.appspot.com/1.jpeg');
-    //       storageRef.getDownloadURL().then(url => image = url);
-    //       console.log(image);
-    //     //   this.imageSrc[i] = image;
-    //   }
-    //   console.log(this.imageSrc);
+      this.imageSrc = [
+          "assets/images/0.jpeg",
+          "assets/images/1.jpeg",
+          "assets/images/2.jpeg",
+          "assets/images/3.jpeg",
+          "assets/images/4.jpeg",
+          "assets/images/5.jpeg",
+      ]
 
   }
 
