@@ -15,23 +15,23 @@
 <ion-content padding>
   <ion-item>
     <ion-label floating>First Name</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="this.currentOrder.customer['firstName']"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Last Name</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="this.currentOrder.customer['lastName']"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Contact Phone Number</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="this.currentOrder.customer['phoneNumber']"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Student ID Number</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="this.currentOrder.customer['studentID']"></ion-input>
   </ion-item>
   <br><br><br><br><br><br><br><br>
-  <button ion-button block (click) = "requirmentInfo()">Submit</button>
+  <button ion-button block (click)="requirementInfo()">Submit</button>
 </ion-content>

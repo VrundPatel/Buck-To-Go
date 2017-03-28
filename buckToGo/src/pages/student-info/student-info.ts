@@ -1,27 +1,17 @@
 import { Component } from '@angular/core';
 import { ModalController, ViewController, NavParams } from 'ionic-angular';
 
-
 @Component({
   selector: 'page-student-info',
   templateUrl: 'student-info.html'
 })
 export class StudentInfoPage {
-pay;
-  constructor(
-    public modalCtrl: ModalController,
-    public navParams: NavParams,
-    public viewCtrl: ViewController
-  ) {this.pay = this.navParams.data.pay;}
+    currentOrder;
+    constructor(public modalCtrl: ModalController, public navParams: NavParams, public viewCtrl: ViewController) {
+        this.currentOrder = navParams.data.currentOrder;
+    }
 
+  dismiss(){ this.viewCtrl.dismiss(); }
 
-  dismiss(){
-    this.viewCtrl.dismiss();
-  }
-
-  requirmentInfo(){
-
-    this.dismiss();
-  }
-
+  requirementInfo(){ this.dismiss(); }
 }

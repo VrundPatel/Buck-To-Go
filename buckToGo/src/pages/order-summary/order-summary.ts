@@ -34,10 +34,12 @@ export class OrderSummaryPage {
   }
 
   // Opens the modal to enter the student info.
-  studInfo() {
-    let modal = this.modalCtrl.create(StudentInfoPage);
+  studInfo(currentOrder) {
+    let modal = this.modalCtrl.create(StudentInfoPage, {
+        currentOrder: this.currentOrder
+    });
     modal.present();
-  }
+}
 
   // Calculates the total of the order.
   calculateTotal() {

@@ -26,7 +26,12 @@ export class HomePage {
       this.queue= af.database.list('/queue');
       this.currentOrder = {
         "foodItems": [],
-        "customer": {},
+        "customer": {
+            "firstName": "",
+            "lastName": "",
+            "phoneNumber": "",
+            "studentID": ""
+        },
         "payment": {},
         "comments": ""
       };
