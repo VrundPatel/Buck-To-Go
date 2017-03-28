@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SubMenuPage } from '../pages/sub-menu-page/sub-menu-page';
@@ -20,6 +21,12 @@ export const firebaseConfig = {
     authDomain: 'https://console.firebase.google.com/project/buck-to-go/overview'
 }
 
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': 'df9c33a4'
+  }
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -33,7 +40,8 @@ export const firebaseConfig = {
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
