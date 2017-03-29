@@ -18,13 +18,9 @@
       <ion-radio value= "{{p}}" ></ion-radio>
     </ion-item>
     <ion-item *ngIf = "paymentOptionChosen == 'Credit Card'">
-      <ion-select>
-        <ion-option value="Visa">Visa</ion-option>
-        <ion-option value="MasterCard">MasterCard</ion-option>
-        <ion-option value="American Express">American Express</ion-option>
-        <ion-option value="Discover">Discover</ion-option>
-        <ion-option value="Citibank">Citibank</ion-option>
-        <ion-option value="Capital One">Capital One</ion-option>
+      <ion-label>Card:</ion-label>
+      <ion-select [(ngModel)] = "creditCardChosen">
+        <ion-option *ngFor = "let c of creditCards" value="{{c}}">{{c}}</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>

@@ -8,12 +8,19 @@ import { ViewController } from 'ionic-angular';
 export class PaymentOptionPage {
 paymentOptions: string [];
 paymentOptionChosen: string;
+creditCardChosen: string;
+creditCards: string [];
   constructor(
 
     public viewCtrl: ViewController
-  ) {this.paymentOptions = [
+  ) {
+    this.paymentOptions = [
     'Cash', 'Points', 'Credit Card'
-  ]}
+  ]
+    this.creditCards = [
+      'Visa', 'MasterCard', 'American Express', 'Discover', 'Citibank', 'Capital One'
+    ]
+}
 
   paymentOption(){
     console.log('payment', this.paymentOptionChosen);
