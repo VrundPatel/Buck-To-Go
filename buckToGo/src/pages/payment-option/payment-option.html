@@ -12,20 +12,13 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list radio-group>
-    <ion-item>
-      <ion-label>Cash</ion-label>
-      <ion-radio value="cash"></ion-radio>
+  <ion-list radio-group [(ngModel)] = "paymentOptionChosen" (ngModelChange) = "paymentOption()">
+    <ion-item *ngFor = "let p of paymentOptions">
+      <ion-label>{{p}}</ion-label>
+      <ion-radio value= "{{p}}" ></ion-radio>
     </ion-item>
-
-    <ion-item>
-      <ion-label>Points</ion-label>
-      <ion-radio value="points"></ion-radio>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Credit Card</ion-label>
-      <ion-select [(ngModel)]="creditcard">
+    <ion-item *ngIf = "paymentOptionChosen == 'Credit Card'">
+      <ion-select>
         <ion-option value="Visa">Visa</ion-option>
         <ion-option value="MasterCard">MasterCard</ion-option>
         <ion-option value="American Express">American Express</ion-option>
