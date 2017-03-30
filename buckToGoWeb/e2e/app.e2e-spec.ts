@@ -1,6 +1,6 @@
 import { BuckToGoWebPage } from './app.po';
 
-describe('buck-to-go-web App', function() {
+describe('buck-to-go-web App', () => {
   let page: BuckToGoWebPage;
 
   beforeEach(() => {
