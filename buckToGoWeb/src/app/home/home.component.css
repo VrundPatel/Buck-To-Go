@@ -1,0 +1,13 @@
+.queue {
+    margin-left: 300px;
+}
+
+.userView {
+    height: 400px;
+}
+
+#title {
+    font-family: 'Fugaz One', cursive !important;
+    font-size: 30px !important;
+    padding-left: 40px;
+}

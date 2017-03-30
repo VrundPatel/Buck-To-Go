@@ -1,13 +1,25 @@
-<md-list>
-  <h3 md-subheader>Orders</h3>
-  <md-list-item *ngFor="let order of queue | async">
-    <h4 md-line>{{order.customer.firstName}} {{order.customer.lastName}}</h4>
-    <p md-line> {{order.customer.phoneNumber}}</p>
-    <md-list>
-      <md-list-item *ngFor="let item of order.foodItems">
-        <p md-line>{{item.name}} x {{item.quantity}}</p>
-      </md-list-item>
-    </md-list>
-    <md-divider></md-divider>
-  </md-list-item>
-</md-list>
+<ul id="slide-out" class="side-nav fixed">
+  <li><div class="userView">
+    <div class="background">
+      <img src="assets/images/buckStop.jpg">
+    </div>
+  </div></li>
+  <li id="title">Buck Stop</li>
+  <li><div class="divider"></div></li>
+</ul>
+
+<div class="queue">
+  <ul class="collection">
+    <li class="collection-item avatar" *ngFor="let order of queue | async">
+      <img src="assets/images/person.png" class="circle">
+      <span class="title">{{order.customer.firstName}} {{order.customer.lastName}}</span>
+      <p>{{order.customer.phoneNumber}}
+      </p>
+      <ul class="collection" class="secondary-content">
+        <li *ngFor="let item of order.foodItems">
+          <p>{{item.name}} x {{item.quantity}}</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
