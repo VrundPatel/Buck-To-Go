@@ -32,7 +32,9 @@ export class HomePage {
             "phoneNumber": "",
             "studentID": ""
         },
-        "payment": {},
+        "payment": {
+          "type": ""
+        },
         "comments": ""
       };
       console.log(this.currentOrder);

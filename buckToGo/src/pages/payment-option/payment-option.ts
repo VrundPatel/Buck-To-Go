@@ -1,19 +1,21 @@
 import { Component } from '@angular/core';
-import { ViewController } from 'ionic-angular';
+import { ModalController, ViewController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-payment-option',
   templateUrl: 'payment-option.html'
 })
 export class PaymentOptionPage {
+currentOrder;
 paymentOptions: string [];
-paymentOptionChosen: string;
 creditCardChosen: string;
 creditCards: string [];
   constructor(
 
-    public viewCtrl: ViewController
+    public viewCtrl: ViewController, public navParams: NavParams, public modalCtrl: ModalController
   ) {
+    this.currentOrder = navParams.data.currentOrder;
+
     this.paymentOptions = [
     'Cash', 'Points', 'Credit Card'
   ]
@@ -21,10 +23,6 @@ creditCards: string [];
       'Visa', 'MasterCard', 'American Express', 'Discover', 'Citibank', 'Capital One'
     ]
 }
-
-  paymentOption(){
-    console.log('payment', this.paymentOptionChosen);
-  }
 
   dismiss(){
     this.viewCtrl.dismiss();
