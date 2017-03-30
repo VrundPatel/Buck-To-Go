@@ -24,7 +24,7 @@
               <ion-col class="col-4">{{waitTime}} minutes</ion-col>
           </ion-row>
           <h4>Comments:</h4>
-          <textarea name="name" rows="3" cols="40"></textarea>
+          <textarea name="name" rows="3" cols="40" [(ngModel)]="this.currentOrder.comments"></textarea>
           <button ion-button block (click)="studInfo()">Student Info</button>
           <button ion-button block (click)="payPayment()">Payment Info</button>
           <button ion-button block (click)="orderFood()">Submit Order</button>
