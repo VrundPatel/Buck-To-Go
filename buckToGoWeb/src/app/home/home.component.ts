@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  queue: FirebaseListObservable<any[]>;
+  constructor(af: AngularFire) {
+    this.queue = af.database.list('/queue');
+    console.log(this.queue);
+  }
 
   ngOnInit() {
   }
