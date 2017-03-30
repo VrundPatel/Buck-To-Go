@@ -35,7 +35,8 @@ export class HomePage {
         "payment": {
           "type": ""
         },
-        "comments": ""
+        "comments": "",
+        "total": 0
       };
       console.log(this.currentOrder);
 

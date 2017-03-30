@@ -48,7 +48,9 @@ export class OrderSummaryPage {
       this.total = 0;
       for (let food of this.currentOrder.foodItems) {
           this.total += food.quantity * food.price;
+
       }
+      this.currentOrder.total = this.total;
   }
 
   // Ordering the food, adding the order to the database.
