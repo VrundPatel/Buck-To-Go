@@ -12,12 +12,12 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list radio-group [(ngModel)] = "paymentOptionChosen" (ngModelChange) = "paymentOption()">
+  <ion-list radio-group [(ngModel)] = "this.currentOrder.payment['type']">
     <ion-item *ngFor = "let p of paymentOptions">
       <ion-label>{{p}}</ion-label>
       <ion-radio value= "{{p}}" ></ion-radio>
     </ion-item>
-    <ion-item *ngIf = "paymentOptionChosen == 'Credit Card'">
+    <ion-item *ngIf = "this.currentOrder.payment['type'] == 'Credit Card'">
       <ion-label>Card:</ion-label>
       <ion-select [(ngModel)] = "creditCardChosen">
         <ion-option *ngFor = "let c of creditCards" value="{{c}}">{{c}}</ion-option>

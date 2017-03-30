@@ -29,7 +29,9 @@ export class OrderSummaryPage {
 
   // Opens the modal to enter the payment info.
   payPayment(){
-    let modal = this.modalCtrl.create(PaymentOptionPage);
+    let modal = this.modalCtrl.create(PaymentOptionPage, {
+      currentOrder: this.currentOrder
+    });
     modal.present();
   }
 
