@@ -10,6 +10,7 @@ currentOrder;
 paymentOptions: string [];
 creditCardChosen: string;
 creditCards: string [];
+requiredPaymentInfo: boolean;
   constructor(
 
     public viewCtrl: ViewController, public navParams: NavParams, public modalCtrl: ModalController
@@ -24,13 +25,21 @@ creditCards: string [];
     ]
 }
 
-  dismiss(){
-    this.viewCtrl.dismiss();
+  orderFood(){
+    this.requiredPaymentInfo = this.checkObject(this.currentOrder.payment);
+    this.viewCtrl.dismiss({
+      requiredPaymentInfo: this.requiredPaymentInfo
+    });
   }
 
-  orderFood(){
-
-    this.dismiss();
+  private checkObject(obj: Object): boolean {
+    for(var o in obj) {
+      console.log('o', 0);
+      if(!obj[o]) {
+        return false;
+      }
+      return true;
+    }
   }
 
 }

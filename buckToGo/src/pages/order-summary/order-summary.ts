@@ -11,6 +11,9 @@ import { PaymentOptionPage } from '../payment-option/payment-option';
 export class OrderSummaryPage {
   currentOrder;
   queue;
+  requiredStudentInfo;
+  requiredPaymentInfo;
+  public quantity: number;
   public total: number;
   public waitTime: number;
 
@@ -22,6 +25,8 @@ export class OrderSummaryPage {
       // Initializes the current order and the queue passed in from the home page.
       this.currentOrder = this.navParams.data.currentOrder;
       this.queue = this.navParams.data.queue;
+      this.requiredStudentInfo = this.navParams.data.requiredStudentInfo;
+      this.requiredPaymentInfo = this.navParams.data.requiredPaymentInfo;
       console.log('Current Order' , this.currentOrder);
       this.calculateTotal();
       this.waitTime = Math.ceil((Math.random() * (5) + 3));
@@ -51,6 +56,10 @@ export class OrderSummaryPage {
 
       }
       this.currentOrder.total = this.total;
+  }
+
+  removeItem(i:number){
+    this.currentOrder.foodItems.splice(i,1);
   }
 
   // Ordering the food, adding the order to the database.
