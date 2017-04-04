@@ -8,18 +8,27 @@
   <li><div class="divider"></div></li>
 </ul>
 
-<div class="queue">
-  <ul class="collection">
-    <li class="collection-item avatar" *ngFor="let order of queue | async">
-      <img src="assets/images/person.png" class="circle">
-      <span class="title">{{order.customer.firstName}} {{order.customer.lastName}}</span>
-      <p>{{order.customer.phoneNumber}}
-      </p>
-      <ul class="collection" class="secondary-content">
-        <li *ngFor="let item of order.foodItems">
-          <p>{{item.name}} x {{item.quantity}}</p>
-        </li>
-      </ul>
-    </li>
-  </ul>
+<div class="list-group queue">
+  <div 
+    class="list-group-item list-group-item-action flex-column align-items-start" 
+    *ngFor="let order of queue | async">
+    <div class="row">
+      <div class="col-3">
+        <img src="assets/images/person.png" alt="" width="75px" height="75px" class="circle">
+        <hr>
+        <h5 class="mb-1">{{order.customer.firstName}} {{order.customer.lastName}}</h5> 
+        <p> {{order.customer.phoneNumber}}</p>
+      </div>
+      <div class="col-6">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let item of order.foodItems">
+            {{item.name}} x {{item.quantity}}
+          </li>
+        </ul>
+      </div>
+      <div class="col-3" style="background-color: limegreen">
+        <a href="" style="color: white" (click)="completeOrder(order.$key)">Complete Order</a>
+      </div>
+    </div>
+  </div>
 </div>
