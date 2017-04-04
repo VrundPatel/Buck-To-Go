@@ -9,8 +9,10 @@ import { PaymentOptionPage } from '../payment-option/payment-option';
   templateUrl: 'order-summary.html'
 })
 export class OrderSummaryPage {
+  food;
   currentOrder;
   queue;
+  public quantity: number;
   public total: number;
   public waitTime: number;
 
@@ -20,6 +22,8 @@ export class OrderSummaryPage {
       public af: AngularFire
   ) {
       // Initializes the current order and the queue passed in from the home page.
+      // this.quantity = 1;
+      this.food = this.navParams.data.order;
       this.currentOrder = this.navParams.data.currentOrder;
       this.queue = this.navParams.data.queue;
       console.log('Current Order' , this.currentOrder);
@@ -51,6 +55,10 @@ export class OrderSummaryPage {
 
       }
       this.currentOrder.total = this.total;
+  }
+
+  removeItem(i:number){
+    this.currentOrder.foodItems.splice(i,1);
   }
 
   // Ordering the food, adding the order to the database.
