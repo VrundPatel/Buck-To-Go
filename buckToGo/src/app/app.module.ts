@@ -23,7 +23,7 @@ export const firebaseConfig = {
 
 const cloudSettings: CloudSettings = {
   'core': {
-    'app_id': 'df9c33a4'
+    'app_id': 'ad968a03'
   }
 };
 

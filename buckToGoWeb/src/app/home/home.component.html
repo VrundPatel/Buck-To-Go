@@ -13,21 +13,30 @@
     class="list-group-item list-group-item-action flex-column align-items-start" 
     *ngFor="let order of queue | async">
     <div class="row">
-      <div class="col-3">
+      <div class="col-5">
         <img src="assets/images/person.png" alt="" width="75px" height="75px" class="circle">
         <hr>
         <h5 class="mb-1">{{order.customer.firstName}} {{order.customer.lastName}}</h5> 
         <p> {{order.customer.phoneNumber}}</p>
       </div>
-      <div class="col-6">
-        <ul class="list-group">
-          <li class="list-group-item" *ngFor="let item of order.foodItems">
-            {{item.name}} x {{item.quantity}}
-          </li>
-        </ul>
-      </div>
-      <div class="col-3" style="background-color: limegreen">
-        <a href="" style="color: white" (click)="completeOrder(order.$key)">Complete Order</a>
+      <div class="col-7">
+        <div class="row">
+          <div class="col">
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let item of order.foodItems">
+                {{item.name}} x {{item.quantity}}
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <blockquote style="background-color: lightblue">
+              <strong>Comments: </strong>{{order.comments}}
+            </blockquote>
+          </div>
+        </div>
+        <div class="row">
+          <button type="" class="btn btn-outline-primary btn-block" (click)="completeOrder(order.$key)">Complete Order</button>
+        </div>
       </div>
     </div>
   </div>

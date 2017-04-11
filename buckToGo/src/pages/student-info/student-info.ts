@@ -12,7 +12,7 @@ export class StudentInfoPage {
         this.currentOrder = navParams.data.currentOrder;
     }
 
-  // dismiss(){ this.viewCtrl.dismiss(); }
+  dismiss(){ this.viewCtrl.dismiss(); }
 
   requirementInfo() {
     this.requiredStudentInfo = this.checkObject(this.currentOrder.customer);

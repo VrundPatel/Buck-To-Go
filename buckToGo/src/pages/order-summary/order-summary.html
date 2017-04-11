@@ -4,7 +4,6 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding >
     <div *ngIf="currentOrder.foodItems.length > 0">
       <ion-list>
@@ -29,7 +28,8 @@
           <textarea name="name" rows="3" cols="40" [(ngModel)]="this.currentOrder.comments"></textarea>
           <button ion-button block (click)="studInfo()">Student Info</button>
           <button ion-button block (click)="payPayment()">Payment Info</button>
-          <button ion-button block (click)="orderFood()" [disabled]="!requiredStudentInfo || !requiredPaymentInfo">Submit Order</button>
+          <!--<button ion-button block (click)="orderFood()" [disabled]="!requiredStudentInfo || !requiredPaymentInfo">Submit Order</button>-->
+          <button ion-button block (click)="orderFood()">Submit Order</button>
       </ion-grid>
     </div>
 </ion-content>
